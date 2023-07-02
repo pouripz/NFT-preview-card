@@ -1,0 +1,187 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.8rem;
+  background-color: var(--main-bg);
+}
+
+:root {
+  /* Primary */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  /* Neutral */
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: #fff;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  margin: 2.5rem;
+}
+
+.parent {
+  width: 100%;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 30px 2px 15px #0c1729;
+}
+
+.parent__nft-pic {
+  width: 100%;
+  height: 300px;
+  background-image: url(../images/image-equilibrium.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.parent__nft-title {
+  margin-bottom: 2rem;
+}
+
+.parent__nft-title .nft-title__header {
+  display: flex;
+  padding-bottom: 1.5rem;
+  color: var(--white);
+}
+.parent__nft-title .nft-title__header h2 {
+  padding-left: 0.4rem;
+}
+
+.parent__nft-title p {
+  color: var(--soft-blue);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.parent__nft-detail {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.7rem;
+}
+
+.parent__nft-detail .nft-detail__number,
+.parent__nft-detail .nft-detail__days {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+
+.parent__nft-detail .nft-detail__number span {
+  color: var(--cyan);
+  padding-left: 0.7rem;
+}
+
+.parent__nft-detail .nft-detail__days span {
+  padding-left: 0.7rem;
+  color: var(--soft-blue);
+}
+
+.parent__nft-owner {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.nft-owner-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-image: url(../images/image-avatar.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid var(--white);
+}
+
+.parent__nft-owner p {
+  padding-left: 1.5rem;
+  color: var(--soft-blue);
+  font-weight: 300;
+}
+
+.parent__nft-owner span {
+  color: var(--white);
+  padding-left: 0.2rem;
+  font-weight: 300;
+}
+
+/* Active */
+
+.nft-title__header:hover,
+.parent__nft-owner span:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.parent__nft-pic .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 10px;
+  background-color: var(--cyan);
+}
+
+.overlay,
+.view--hover {
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.parent__nft-pic .view--hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+/* Responsive */
+@media all and (min-width: 768px) {
+  .container {
+    width: 350px;
+  }
+
+  .parent__nft-pic:hover .overlay {
+    opacity: 0.5;
+  }
+
+  .parent__nft-pic:hover .view--hover {
+    opacity: 1;
+  }
+
+  .parent {
+    box-shadow: 0 22px 4px 13px #0c1729;
+  }
+}
